@@ -22,6 +22,11 @@ export class FullScreenComponent implements OnInit {
       style: 'mapbox://styles/mapbox/streets-v11',
       center: [-97.10479, 18.86312],
       zoom: 18,
+      projection: { name: 'globe' },
+    });
+
+    map.on('style.load', () => {
+      map.setFog({}); // Set the default atmosphere style
     });
   }
 }
